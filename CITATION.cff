@@ -1,0 +1,70 @@
+cff-version: 1.2.0
+message: "If you use this software in a publication, please cite the associated paper when available."
+authors:
+  - family-names: "de Kermenguy"
+    given-names: "François"
+    orcid: "https://orcid.org/0000-0003-3293-6471"
+title: "PrismMaterialDecomposition.jl"
+version: "0.1.0"
+doi: 10.5281/zenodo.18225971
+date-released: 2026-05-06
+repository-code: "https://github.com/fdekerme/PrismMaterialDecomposition.jl"
+url: "https://github.com/fdekerme/PrismMaterialDecomposition.jl"
+license: "MIT"
+abstract:
+  PrismMaterialDecomposition.jl is a Julia package for regularized material
+  decomposition of planar dual-energy kV data, with an emphasis on
+  edge-preserving noise-reduction and GPU-based real-time performance.
+keywords:
+  - Julia
+  - material decomposition
+  - dual-energy
+  - GPU
+  - regularization
+  - imaging
+  - image guided radiation therapy
+preferred-citation: 
+  type: article
+  authors:
+  - family-names: "de Kermenguy"
+    given-names: "François"
+    orcid: "https://orcid.org/0000-0003-3293-6471"
+  - family-names: "Jacobson"
+    given-names: "Matthew W."
+  - family-names: "Sharp"
+    given-names: "Gregory C."
+  - family-names: "Myronakis"
+    given-names: "Marios"
+  - family-names: "Harris"
+    given-names: "Thomas C."
+  - family-names: "Lowther"
+    given-names: "Nicholas"
+  - family-names: "Hu"
+    given-names: "Yue-Houng"
+  - family-names: "Vecchione"
+    given-names: "Bradford"
+  - family-names: "Etemadpour"
+    given-names: "Roshanak"
+  - family-names: "Lehmann"
+    given-names: "Mathias"
+  - family-names: "Bruegger"
+    given-names: "Raphael"
+  - family-names: "Birrer"
+    given-names: "Vera"
+  - family-names: "Corral Arroyo"
+    given-names: "Pablo"
+  - family-names: "Fueglistaller"
+    given-names: "Rony"
+  - family-names: "Berbeco"
+    given-names: "Ross I."
+  - family-names: "Ferguson"
+    given-names: "Dianne M."
+  doi: "10.0000/00000"
+  journal: "Medical Physics"
+  month: 1
+  start: 1 # First page number
+  end: 10 # Last page number
+  title: "PRISM: An Open-Source Framework for Regularized Material Decomposition on a Novel kV Dual-Layer Imager"
+  issue: 1
+  volume: 1
+  year: 2026
