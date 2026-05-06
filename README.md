@@ -32,7 +32,7 @@ $$
 \min_{\vec{x}}\ F\left( \vec{x} \right) = \left( \mathbf{A}\vec{x} - \vec{p} \right)^{T}\mathbf{V}^{-1}\left( \mathbf{A}\vec{x} - \vec{p} \right) + \lambda R\left( \vec{x} \right)
 $$
 
-where $\vec{x}$ is the vector of material images to be estimated, $\mathbf{A}$ is the system matrix encoding the linear relationship between material images and projection data, $\vec{p}$ is the vector of observed dual-energy projection data, $\mathbf{V}$ is the variance-covariance matrix of the noise in the projection data, $\lambda$ is a regularization parameter controlling the strength of the regularization term, and $R\left( \vec{x} \right)$ is a regularization function that imposes prior knowledge or constraints on the solution.
+where $\vec{x}$ is the vector of material images to be estimated, $\mathbf{A}$ is the system matrix encoding the linear relationship between material images and projection data, $\vec{p}$ is the vector of observed dual-energy projection data, $\mathbf{V}$ is the variance-covariance matrix of the noise in the projection data, $\lambda$ is a regularization parameter controlling the strength of the regularization term, and $R$ is a regularization function that imposes prior knowledge or constraints on the solution.
 
 Two classes of regularization strategies are currently implemented in PrismMaterialDecomposition.jl:
 1. Local regularization, which includes quadratic and edge-weighted quadratic regularization. These methods penalize the differences between neighboring pixels in the material images, with the edge-weighted version allowing for edge preservation by reducing the penalty at locations with high gradients.
@@ -79,21 +79,6 @@ If PrismMaterialDecomposition.jl has already been registered, install it with:
 ```julia
 using Pkg
 Pkg.add("PrismMaterialDecomposition")
-```
-
-Before registration, install the package directly from GitHub:
-
-```julia
-using Pkg
-Pkg.develop(url="https://github.com/fdekerme/PrismMaterialDecomposition.jl")
-```
-
-If you are working from a local clone of the repository:
-
-```julia
-using Pkg
-Pkg.activate("/path/to/PrismMaterialDecomposition")
-Pkg.instantiate()
 ```
 
 ## Quick Start
