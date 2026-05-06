@@ -24,7 +24,7 @@ end
 
 # ╔═╡ 9aee381e-8248-429c-837a-0a67ea5c76f0
 begin
-	using Prism
+	using PrismMaterialDecomposition
 	using CairoMakie
 	using PlutoUI
 	using JLD2

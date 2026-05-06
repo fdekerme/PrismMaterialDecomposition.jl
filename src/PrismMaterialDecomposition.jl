@@ -1,4 +1,4 @@
-module Prism
+module PrismMaterialDecomposition
 
 using Attenuations: Elements, Element, Materials, Material, μᵨ, val
 using Attenuations: μ as μ_linear
@@ -105,4 +105,4 @@ export NonLinearPrismSolver,
 #Re-export from Attenuations.jl
 export val, Materials, Elements
 
-end # module Prism
+end # module PrismMaterialDecomposition

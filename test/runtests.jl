@@ -1,7 +1,7 @@
 using Test
-using Prism
+using PrismMaterialDecomposition
 
-@testset "Prism Tests" begin
+@testset "PrismMaterialDecomposition Tests" begin
 
     function generate_fake_DLI(rows::Int, cols::Int)
         r = rand(rows, cols)

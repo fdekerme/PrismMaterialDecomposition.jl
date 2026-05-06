@@ -1,14 +1,14 @@
-# Prism.jl
+# PrismMaterialDecomposition.jl
 
 <p align="center">
-  <img src="Prism_logo.png" alt="Prism.jl logo" width="260" />
+  <img src="Prism_logo.png" alt="PrismMaterialDecomposition.jl logo" width="260" />
 </p>
 
-Prism.jl is a Julia package for regularized material decomposition of planar dual-energy kV data, with an emphasis on edge-preserving noise-reduction and GPU-based real-time performance. It provides local and non-local regularization models, along with pre- and post-decomposition utilities for image quality analysis and visualization.
+PrismMaterialDecomposition.jl is a Julia package for regularized material decomposition of planar dual-energy kV data, with an emphasis on edge-preserving noise-reduction and GPU-based real-time performance. It provides local and non-local regularization models, along with pre- and post-decomposition utilities for image quality analysis and visualization.
 
 ## Overview
 
-Prism.jl supports the full workflow for dual-energy projection studies:
+PrismMaterialDecomposition.jl supports the full workflow for dual-energy projection studies:
 
 - loading projection data and spectra
 - computing linear attenuation coeeficients for materials of interest
@@ -26,7 +26,7 @@ The package currently includes:
 
 ## Mathematical Formulation
 
-Prism.jl formulates regularized material decomposition as a convex optimization problem:
+PrismMaterialDecomposition.jl formulates regularized material decomposition as a convex optimization problem:
 
 $$
 \min_{\vec{x}}\ F\left( \vec{x} \right) = \left( \mathbf{A}\vec{x} - \vec{p} \right)^{T}\mathbf{V}^{-1}\left( \mathbf{A}\vec{x} - \vec{p} \right) + \lambda R\left( \vec{x} \right)
@@ -34,7 +34,7 @@ $$
 
 where $\vec{x}$ is the vector of material images to be estimated, $\mathbf{A}$ is the system matrix encoding the linear relationship between material images and projection data, $\vec{p}$ is the vector of observed dual-energy projection data, $\mathbf{V}$ is the variance-covariance matrix of the noise in the projection data, $\lambda$ is a regularization parameter controlling the strength of the regularization term, and $R\left( \vec{x} \right)$ is a regularization function that imposes prior knowledge or constraints on the solution.
 
-Two classes of regularization strategies are currently implemented in Prism.jl:
+Two classes of regularization strategies are currently implemented in PrismMaterialDecomposition.jl:
 1. Local regularization, which includes quadratic and edge-weighted quadratic regularization. These methods penalize the differences between neighboring pixels in the material images, with the edge-weighted version allowing for edge preservation by reducing the penalty at locations with high gradients.
 2. Non-local regularization, which includes similarity and a new cross-similarity regularization. These methods leverage the self-similarity of image patches across the material images to reduce noise while preserving fine details. The cross-similarity regularization is a novel approach specifically designed for dual-energy images. 
 
@@ -72,27 +72,27 @@ RegularizedDecomposition(prob::RegularizedDecompositionProblem)
 
 The recommended way to install Julia is with Juliaup, the official Julia installer and version manager. Official installation instructions are available at https://julialang.org/install/ and in the Juliaup repository at https://github.com/JuliaLang/juliaup.
 
-### 2. Install Prism.jl
+### 2. Install PrismMaterialDecomposition.jl
 
-If Prism.jl has already been registered, install it with:
+If PrismMaterialDecomposition.jl has already been registered, install it with:
 
 ```julia
 using Pkg
-Pkg.add("Prism")
+Pkg.add("PrismMaterialDecomposition")
 ```
 
 Before registration, install the package directly from GitHub:
 
 ```julia
 using Pkg
-Pkg.develop(url="https://github.com/fdekerme/Prism.jl")
+Pkg.develop(url="https://github.com/fdekerme/PrismMaterialDecomposition.jl")
 ```
 
 If you are working from a local clone of the repository:
 
 ```julia
 using Pkg
-Pkg.activate("/path/to/Prism")
+Pkg.activate("/path/to/PrismMaterialDecomposition")
 Pkg.instantiate()
 ```
 
@@ -101,7 +101,7 @@ Pkg.instantiate()
 The example below uses synthetic dual-energy images so it can be run without access to the repository datasets.
 
 ```julia
-using Prism
+using PrismMaterialDecomposition
 
 # Synthetic dual-energy inputs
 base = rand(256, 256)
@@ -141,10 +141,10 @@ display(fig)
 
 ## GPU Backends
 
-Prism includes GPU regularization operators for supported CUDA and Metal devices. A typical CUDA setup follows the same interface as the CPU workflow:
+PrismMaterialDecomposition includes GPU regularization operators for supported CUDA and Metal devices. A typical CUDA setup follows the same interface as the CPU workflow:
 
 ```julia
-using Prism
+using PrismMaterialDecomposition
 
 base = rand(256, 256)
 dli = DLI(base .+ 0.5, base .+ 0.6)
@@ -178,7 +178,7 @@ On Apple hardware, the corresponding Metal backend is available through `Regular
 
 ## Package Structure
 
-Prism.jl is organized around a few core abstractions:
+PrismMaterialDecomposition.jl is organized around a few core abstractions:
 
 - `DLI`, `MI`, and `Spectra` for dual-energy inputs, material images, and spectra
 - `Regularization` and `RegularizedDecompositionProblem*` for solver setup
@@ -192,7 +192,7 @@ The repository includes notebooks and scripts for larger experiments, including 
 
 ## Citation
 
-If you use Prism.jl in academic work, please cite the associated paper when it becomes available online.
+If you use PrismMaterialDecomposition.jl in academic work, please cite the associated paper when it becomes available online.
 
 Suggested provisional citation text:
 
@@ -202,7 +202,7 @@ Once the article, DOI, or preprint link is public, this section should be update
 
 ## Disclaimer
 
-**The Prism package is intended strictly for research purposes and should not be used in a clinical setting.**
+**The PrismMaterialDecomposition package is intended strictly for research purposes and should not be used in a clinical setting.**
 
 ## Contributing
 
@@ -217,4 +217,4 @@ Pkg.test()
 
 ## License
 
-Prism.jl is released under the MIT License. See [LICENSE](LICENSE) for details.
+PrismMaterialDecomposition.jl is released under the MIT License. See [LICENSE](LICENSE) for details.

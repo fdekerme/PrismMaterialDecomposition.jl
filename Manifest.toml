@@ -2,7 +2,7 @@
 
 julia_version = "1.12.6"
 manifest_format = "2.0"
-project_hash = "f3ebf5531e0c233b020d90a60601c55d066c9920"
+project_hash = "7c99df75f05fce7ad7e55c9d0299cc827a63090f"
 
 [[deps.ADTypes]]
 git-tree-sha1 = "bbc22a9a08a0ef6460041086d8a7b27940ed4ffd"
@@ -2331,7 +2331,7 @@ deps = ["Unicode"]
 uuid = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 version = "1.11.0"
 
-[[deps.Prism]]
+[[deps.PrismMaterialDecomposition]]
 deps = ["Attenuations", "BenchmarkTools", "CUDA", "CairoMakie", "CircleFit", "Colors", "DataFrames", "Distributions", "FileIO", "GeometryBasics", "HDF5", "ImageFiltering", "Images", "Interpolations", "JLD2", "Krylov", "LineSearch", "LinearAlgebra", "LinearSolve", "LiveServer", "LsqFit", "MAT", "Makie", "Metal", "NonlinearSolve", "Pluto", "PlutoUI", "Printf", "Revise", "SciMLOperators", "SparseArrays", "SpecialFunctions", "Statistics", "Unitful"]
 path = "."
 uuid = "7b44cc36-3fea-439d-9e81-3608c4144315"
