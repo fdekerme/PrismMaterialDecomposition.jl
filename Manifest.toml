@@ -2,7 +2,7 @@
 
 julia_version = "1.12.6"
 manifest_format = "2.0"
-project_hash = "7c99df75f05fce7ad7e55c9d0299cc827a63090f"
+project_hash = "cdf9311af4e7c644db40079c808c2d6c166d776b"
 
 [[deps.ADTypes]]
 git-tree-sha1 = "bbc22a9a08a0ef6460041086d8a7b27940ed4ffd"
@@ -3150,6 +3150,12 @@ deps = ["Artifacts", "JLLWrappers", "Libdl"]
 git-tree-sha1 = "a63799ff68005991f9d9491b6e95bd3478d783cb"
 uuid = "c5fb5394-a638-5e4d-96e5-b29de1b5cf10"
 version = "1.6.0+0"
+
+[[deps.XrayAttenuation]]
+deps = ["AxisArrays", "Interpolations", "Unitful"]
+git-tree-sha1 = "5a24fd34f1707db73dd8582478bb3d8acd85e497"
+uuid = "7811750c-a499-436e-8b04-55fc0593dd37"
+version = "0.2.3"
 
 [[deps.Zlib_jll]]
 deps = ["Libdl"]

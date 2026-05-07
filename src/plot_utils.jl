@@ -117,7 +117,6 @@ function plot_spectra(spectra::Spectra, row::Integer, col::Integer)
     return fig
 end
 
-
 """
     plot_attenuation(E_range, material_1, material_2; E_low=nothing, E_high=nothing)
 
@@ -135,8 +134,8 @@ function plot_attenuation(E_range, material_1, material_2; E_low = nothing, E_hi
         xscale = log10,
         yscale = log10,
     )
-    lines!(ax, val.(E_range), val.(μᵨ(material_1, E_range)), label = material_1.name)
-    lines!(ax, val.(E_range), val.(μᵨ(material_2, E_range)), label = material_2.name)
+    lines!(ax, val.(E_range), val.(mass_attenuation_coeff(material_1, E_range)), label = material_1.name)
+    lines!(ax, val.(E_range), val.(mass_attenuation_coeff(material_2, E_range)), label = material_2.name)
 
     if !isnothing(E_low)
         E_low = val(E_low) # Extract numeric value if E_low is a Quantity
@@ -177,7 +176,7 @@ function plot_attenuation(E_range, material_1; E_low = nothing, E_high = nothing
         xscale = log10,
         yscale = log10,
     )
-    lines!(ax, val.(E_range), val.(μᵨ(material_1, E_range)), label = material_1.name)
+    lines!(ax, val.(E_range), val.(mass_attenuation_coeff(material_1, E_range)), label = material_1.name)
     if !isnothing(E_high)
         E_high = val(E_high) # Extract numeric value if E_high is a Quantity
         vlines!(

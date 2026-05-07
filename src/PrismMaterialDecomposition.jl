@@ -1,7 +1,6 @@
 module PrismMaterialDecomposition
 
-using Attenuations: Elements, Element, Materials, Material, μᵨ, val
-using Attenuations: μ as μ_linear
+using XrayAttenuation: Elements, Element, Materials, Material, mass_attenuation_coeff, linear_attenuation_coeff, val
 using CairoMakie
 using CircleFit
 using CUDA

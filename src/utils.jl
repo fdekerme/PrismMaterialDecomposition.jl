@@ -212,6 +212,7 @@ end
 
 function effective_mass_attenuations(spectra::Spectra, material)
     energy_bins = axes(spectra.top, 3)
+    energies = collect(energy_bins) .* u"keV"
     spectra_top = deepcopy(spectra.top)
     spectra_bottom = deepcopy(spectra.bottom)
 
@@ -226,8 +227,8 @@ function effective_mass_attenuations(spectra::Spectra, material)
     denominator_top = sum(mean_weights_top .* energy_bins)
     denominator_bottom = sum(mean_weights_bottom .* energy_bins)
 
-    numerator_top = sum(μᵨ(material, energy_bins  .* u"keV") .* mean_weights_top .* energy_bins)
-    numerator_bottom = sum(μᵨ(material, energy_bins .* u"keV") .* mean_weights_bottom .* energy_bins)
+    numerator_top = sum(mass_attenuation_coeff(material, energies) .* mean_weights_top .* energy_bins)
+    numerator_bottom = sum(mass_attenuation_coeff(material, energies) .* mean_weights_bottom .* energy_bins)
 
     μ_eff_top = numerator_top / denominator_top
     μ_eff_bottom = numerator_bottom / denominator_bottom
@@ -237,6 +238,7 @@ end
 
 function effective_linear_attenuations(spectra::Spectra, material)
     energy_bins = axes(spectra.top, 3)
+    energies = collect(energy_bins) .* u"keV"
     spectra_top = deepcopy(spectra.top)
     spectra_bottom = deepcopy(spectra.bottom)
 
@@ -251,8 +253,8 @@ function effective_linear_attenuations(spectra::Spectra, material)
     denominator_top = sum(mean_weights_top .* energy_bins)
     denominator_bottom = sum(mean_weights_bottom .* energy_bins)
 
-    numerator_top = sum(μ_linear(material, energy_bins  .* u"keV") .* mean_weights_top .* energy_bins)
-    numerator_bottom = sum(μ_linear(material, energy_bins .* u"keV") .* mean_weights_bottom .* energy_bins)
+    numerator_top = sum(linear_attenuation_coeff(material, energies) .* mean_weights_top .* energy_bins)
+    numerator_bottom = sum(linear_attenuation_coeff(material, energies) .* mean_weights_bottom .* energy_bins)
 
     μ_eff_top = numerator_top / denominator_top
     μ_eff_bottom = numerator_bottom / denominator_bottom

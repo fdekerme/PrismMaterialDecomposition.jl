@@ -13,7 +13,7 @@ using PrismMaterialDecomposition
     @testset "Material Decomposition (No Regularization)" begin
         dli_images = generate_fake_DLI(512, 512)
 
-        material_1 = Materials.PMMA
+        material_1 = Materials.pmma
         material_2 = Elements.Copper
 
         μ₁ = μ("Water, Liquid", 0.1926, 0.1781)
@@ -49,7 +49,7 @@ using PrismMaterialDecomposition
     @testset "Regularized Decomposition Problem" begin
         dli_images = generate_fake_DLI(512, 512)
 
-        material_1 = Materials.PMMA
+        material_1 = Materials.pmma
         material_2 = Elements.Copper
 
         μ₁ = μ("Water, Liquid", 0.1926, 0.1781)
@@ -75,7 +75,7 @@ using PrismMaterialDecomposition
     @testset "Regularized Decomposition with Regularization" begin
         dli_images = generate_fake_DLI(512, 512)
 
-        material_1 = Materials.PMMA
+        material_1 = Materials.pmma
         material_2 = Elements.Copper
 
         μ₁ = μ("Water, Liquid", 0.1926, 0.1781)
@@ -107,7 +107,7 @@ using PrismMaterialDecomposition
         @testset "Linear Decomposition with Metal Regularization" begin
             dli_images = generate_fake_DLI(512, 512)
 
-            material_1 = Materials.PMMA
+            material_1 = Materials.pmma
             material_2 = Elements.Copper
 
             μ₁ = μ("Water, Liquid", 0.1926, 0.1781)
@@ -147,7 +147,7 @@ using PrismMaterialDecomposition
             @testset "Regularized Decomposition with CUDA Regularization" begin
             dli_images = generate_fake_DLI(512, 512)
 
-            material_1 = Materials.PMMA
+            material_1 = Materials.pmma
             material_2 = Elements.Copper
 
             μ₁ = μ("Water, Liquid", 0.1926, 0.1781)
@@ -185,7 +185,7 @@ using PrismMaterialDecomposition
     @testset "ESF and LSF Computation" begin
         dli_images = generate_fake_DLI(512, 512)
 
-        material_1 = Materials.PMMA
+        material_1 = Materials.pmma
         material_2 = Elements.Copper
 
         μ₁ = μ("Water, Liquid", 0.1926, 0.1781)
@@ -206,7 +206,7 @@ using PrismMaterialDecomposition
     @testset "Decomposition Characteristics" begin
         dli_images = generate_fake_DLI(512, 512)
 
-        material_1 = Materials.PMMA
+        material_1 = Materials.pmma
         material_2 = Elements.Copper
 
         μ₁ = μ("Water, Liquid", 0.1926, 0.1781)
@@ -233,7 +233,7 @@ using PrismMaterialDecomposition
     @testset "λTest Functionality" begin
         dli_images = generate_fake_DLI(512, 512)
 
-        material_1 = Materials.PMMA
+        material_1 = Materials.pmma
         material_2 = Elements.Copper
 
         μ₁ = μ("Water, Liquid", 0.1926, 0.1781)
